@@ -1,0 +1,12 @@
+
+<ul class="list-unstyled">
+	{% for case in case_studies %}
+	<a href="/case_studies/{{ case.page_name }}">
+		<li>
+			{{ case.case_name }}
+		</li>
+	</a>
+	{% endfor %}
+</ul>
+
+

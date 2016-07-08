@@ -1,0 +1,28 @@
+{% extends "templates/web.html" %}
+
+{% block page_content %}
+<!-- no-sidebar -->
+<div class="page-content-block">
+	<h2>Case Information</h2>
+	<ul class="list-unstyled">
+		<li>
+			<label>Case Name:</label> {{ doc.case_name or "" }}
+		</li>
+		<li>
+			<label>Source:</label> {{ doc.source_code or "" }}
+		</li>
+	</ul>
+	<hr>
+	<h2>Problem Description</h2>
+	<div>{{ doc.problem_description }}</div>
+	<hr>
+	<h2>Approach</h2>
+	<div>{{ doc.approach }}</div>
+	<hr>
+	<h2>Solution</h2>
+	<div>{{ doc.solution }}</div>
+	<hr>
+	<h2>Limitations</h2>
+	<div>{{ doc.limitations }}</div>
+</div>
+{% endblock %}
