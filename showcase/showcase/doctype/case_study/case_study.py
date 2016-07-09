@@ -14,5 +14,10 @@ class CaseStudy(WebsiteGenerator):
 		template = "templates/generators/case_study.html",
 		no_cache = 1
 	)
+	def before_insert(self):
+		if not self.page_name:
+			page_name = self.case_name.lower()
+			self.page_name = page_name.replace(" ", "-")
+
 	def autoname(self):
 		self.name = self.page_name
