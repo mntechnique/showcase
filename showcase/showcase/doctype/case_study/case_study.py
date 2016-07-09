@@ -6,6 +6,7 @@ from __future__ import unicode_literals
 import frappe
 from frappe.model.document import Document
 from frappe.website.website_generator import WebsiteGenerator
+from frappe.website.doctype.website_slideshow.website_slideshow import get_slideshow
 
 class CaseStudy(WebsiteGenerator):
 	website = frappe._dict(
@@ -21,3 +22,11 @@ class CaseStudy(WebsiteGenerator):
 
 	def autoname(self):
 		self.name = self.page_name
+
+
+	def get_context(self, context):
+		# if static page, get static content
+		if context.slideshow:
+			context.update(get_slideshow(self))
+
+		return context

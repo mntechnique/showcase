@@ -1,12 +1,23 @@
-
-<ul class="list-unstyled">
+<!-- title: Our Development Showcase -->
+<div class="row">
 	{% for case in case_studies %}
-	<a href="/case_studies/{{ case.page_name }}">
-		<li>
-			{{ case.case_name }}
-		</li>
-	</a>
+		<div class="col-xs-6 col-lg-4">
+			<div class="panel panel-default" >
+				<div class="panel-heading">
+					<h4 class="panel-title ellipsis"><a href="/case_studies/{{ case.page_name }}">{{ case.case_name }}</a></h4>
+				</div>	
+				<div class="panel-body">
+			    	<div style="height: 120px">
+						{{ case.case_description }}
+					</div>
+				</div>
+				<div class="panel-footer">
+					<div style="text-align: right;">
+						<a class="label label-success" href="/case_studies/{{ case.page_name }}">Details</a>
+						<a class="label label-info" href="{{ case.source_code }}">Source</a>
+					</div>
+				</div>
+			</div>
+		</div>
 	{% endfor %}
-</ul>
-
-
+</div>

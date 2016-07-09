@@ -2,27 +2,46 @@
 
 {% block page_content %}
 <!-- no-sidebar -->
-<div class="page-content-block">
-	<h2>Case Information</h2>
-	<ul class="list-unstyled">
-		<li>
-			<label>Case Name:</label> {{ doc.case_name or "" }}
-		</li>
-		<li>
-			<label>Source:</label> {{ doc.source_code or "" }}
-		</li>
-	</ul>
-	<hr>
-	<h2>Problem Description</h2>
-	<div>{{ doc.problem_description }}</div>
-	<hr>
-	<h2>Approach</h2>
-	<div>{{ doc.approach }}</div>
-	<hr>
-	<h2>Solution</h2>
-	<div>{{ doc.solution }}</div>
-	<hr>
-	<h2>Limitations</h2>
-	<div>{{ doc.limitations }}</div>
+<div>
+	<div style="float: right;">
+		<a href="{{ doc.source_code }}" class="btn btn-sm btn-success">
+			<i class="icon-code-fork"> </i>
+			Source
+		</a>
+	</div>
+	<div>
+		<h2>{{ doc.case_name }}</h2>		
+	</div>
+</div>
+<div class="well">
+	<div style="text-align: justify;">
+		{%- if doc.problem_description -%}
+		<h2 class="txt-blue " style="border-bottom: solid 1px #ddd"><i class="thumbnail	octicon octicon-alert rightspacer-10"></i>The Problem</h2>
+		<div>{{ doc.problem_description }}</div>
+		{%- endif -%}
+		
+		{%- if doc.approach -%}
+		<h2 class="txt-blue " style="border-bottom: solid 1px #ddd"><i class="thumbnail octicon octicon-beaker rightspacer-10"></i>The Solution</h2>
+		<div>{{ doc.approach }}</div>
+		{%- endif -%}
+		
+		{%- if doc.solution -%}
+		<h2 class="txt-blue " style="border-bottom: solid 1px #ddd"></h2>
+		<div>{{ doc.solution }}</div>
+		{%- endif -%}
+
+		{%- if slideshow -%}
+		<h2 class="txt-blue " style="border-bottom: solid 1px #ddd">Screenshots</h2>
+		<div>{% include "templates/includes/slideshow.html" %}</div>
+		{%- endif -%}
+
+		{%- if doc.limitations -%}
+		<h2 class="txt-blue " style="border-bottom: solid 1px #ddd">
+			<i class="thumbnail octicon octicon-tools rightspacer-10"></i>
+			The Customization
+		</h2>
+		<div>{{ doc.limitations }}</div>	
+		{%- endif-%}
+	</div>
 </div>
 {% endblock %}
