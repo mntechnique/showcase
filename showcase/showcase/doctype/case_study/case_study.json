@@ -3,11 +3,13 @@
  "allow_import": 0, 
  "allow_rename": 0, 
  "autoname": "page_name", 
+ "beta": 0, 
  "creation": "2016-07-08 19:32:53.331519", 
  "custom": 0, 
  "docstatus": 0, 
  "doctype": "DocType", 
  "document_type": "Document", 
+ "editable_grid": 0, 
  "fields": [
   {
    "allow_on_submit": 0, 
@@ -158,6 +160,32 @@
    "search_index": 0, 
    "set_only_once": 0, 
    "unique": 0
+  }, 
+  {
+   "allow_on_submit": 0, 
+   "bold": 0, 
+   "collapsible": 0, 
+   "depends_on": "published", 
+   "fieldname": "route", 
+   "fieldtype": "Data", 
+   "hidden": 0, 
+   "ignore_user_permissions": 0, 
+   "ignore_xss_filter": 0, 
+   "in_filter": 0, 
+   "in_list_view": 0, 
+   "label": "Route", 
+   "length": 0, 
+   "no_copy": 0, 
+   "permlevel": 0, 
+   "precision": "", 
+   "print_hide": 0, 
+   "print_hide_if_no_value": 0, 
+   "read_only": 0, 
+   "report_hide": 0, 
+   "reqd": 0, 
+   "search_index": 0, 
+   "set_only_once": 0, 
+   "unique": 1
   }, 
   {
    "allow_on_submit": 0, 
@@ -364,13 +392,14 @@
  "hide_heading": 0, 
  "hide_toolbar": 0, 
  "idx": 0, 
+ "image_view": 0, 
  "in_create": 0, 
  "in_dialog": 0, 
  "is_submittable": 0, 
  "issingle": 0, 
  "istable": 0, 
  "max_attachments": 0, 
- "modified": "2016-07-09 20:56:39.092010", 
+ "modified": "2016-07-22 21:55:25.477426", 
  "modified_by": "Administrator", 
  "module": "Showcase", 
  "name": "Case Study", 
@@ -418,10 +447,12 @@
    "write": 0
   }
  ], 
+ "quick_entry": 0, 
  "read_only": 0, 
  "read_only_onload": 0, 
  "search_fields": "case_name", 
  "sort_field": "modified", 
  "sort_order": "DESC", 
- "title_field": "case_name"
+ "title_field": "case_name", 
+ "track_seen": 0
 }
