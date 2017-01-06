@@ -7,7 +7,7 @@ def get_data():
 		{
 			"module_name": "Showcase",
 			"color": "brown",
-			"icon": "icon-suitcase",
+			"icon": "fa fa-suitcase",
 			"type": "module",
 			"label": _("Showcase")
 		}
