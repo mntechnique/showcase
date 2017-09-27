@@ -29,5 +29,5 @@ class CaseStudy(WebsiteGenerator):
 		if context.slideshow:
 			context.update(get_slideshow(self))
 		
-		context.parents = [{'name': 'case_studies', 'title': _('Cases') }]
+		context.parents = [{'route': 'case_studies', 'title': _('Cases') }]
 		return context
