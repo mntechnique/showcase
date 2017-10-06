@@ -1,23 +1,40 @@
 <!-- title: Our Development Showcase -->
 <div class="row">
-	{% for case in case_studies %}
-		<div class="col-xs-12 col-lg-4">
-			<div class="panel panel-default" >
-				<div class="panel-heading">
-					<h4 class="panel-title ellipsis"><a href="/{{ case.route }}">{{ case.case_name }}</a></h4>
-				</div>	
-				<div class="panel-body">
-			    	<div style="height: 120px">
-						{{ case.case_description }}
+	{% if case_studies|length > 0 %}
+		{% for case in case_studies %}
+			<div class="col-xs-12 col-lg-4">
+				<div class="panel panel-default" >
+					<div class="panel-heading">
+						<h4 class="panel-title ellipsis"><a href="/{{ case.route }}">{{ case.case_name }}</a></h4>
+					</div>	
+					<div class="panel-body">
+				    	<div style="height: 120px">
+							{{ case.case_description }}
+						</div>
 					</div>
-				</div>
-				<div class="panel-footer">
-					<div style="text-align: right;">
-						<a class="label label-success" href="/{{ case.route }}">Details</a>
-						<a class="label label-info" href="{{ case.source_code }}">Releases</a>
+					<div class="panel-footer">
+						<div style="text-align: right;">
+							<a class="label label-success" href="/{{ case.route }}">Details</a>
+							<a class="label label-info" href="{{ case.source_code }}">Releases</a>
+						</div>
 					</div>
 				</div>
 			</div>
+		{% endfor %}
+	{% else %}
+		<div class="col-xs-12">
+			<div class="text-muted text-center">
+				<h3>Cases not found</h3>
+			</div>
 		</div>
-	{% endfor %}
+	{% endif %}
+</div>
+<div class="row">
+	<div class="col-xs-12">
+		<ul class="pagination">
+		{% for i in range(0, pages) %}
+		  <li><a href="/case_studies?page={{i + 1}}">{{i+1}}</a></li>
+		{% endfor %}
+		</ul>
+	</div>
 </div>
