@@ -15,8 +15,7 @@ def get_context(context):
 		order_by="case_name asc",
 		page_length=6,
 		start=(page-1)*6)
-	if len (case_studies) != 0:
-		context.case_studies = case_studies
+	context.case_studies = case_studies
 	all_cases = frappe.get_all("Case Study", filters={"published":1})
 	pages = len(chunks(all_cases,6))
 	context.pages = pages
