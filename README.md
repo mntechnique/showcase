@@ -1,6 +1,6 @@
 ## Showcase
 
-Portfolio of Cases
+Portfolio of Case Studies
 
 #### License
 
